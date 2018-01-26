@@ -4,7 +4,7 @@
 from alpine as stage0
 copy hello.asm /root/
 run apk update \
-    && apk add nasm gcc \
+    && apk add nasm binutils \
     && cd /root \
     && nasm -f elf64 hello.asm \
     && ld -s -o hello hello.o
